@@ -28,6 +28,7 @@ It’s built for servers that want a minimal, modern interface that actually fee
 
 ## Inventory Item (ox_inventory)
 
+```lua
 ['compass'] = {
     label = 'Compass',
     weight = 100,
@@ -35,3 +36,4 @@ It’s built for servers that want a minimal, modern interface that actually fee
     close = true,
     description = 'Navigate with confidence.'
 }
+
