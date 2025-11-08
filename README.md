@@ -23,7 +23,8 @@ It’s built for servers that want a minimal, modern interface that actually fee
 
 ## Installation
 
-1. Download or clone the repository into your server’s `resources` folder:
+1. Download or clone the repository into your server’s `resources` folder
+2. Go to your Server.cfg and ensure the resource, `ensure PhoQ_Compass`
 
 
 ## Inventory Item (ox_inventory)
@@ -36,4 +37,5 @@ It’s built for servers that want a minimal, modern interface that actually fee
     close = true,
     description = 'Navigate with confidence.'
 }
+
 
