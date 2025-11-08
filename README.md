@@ -37,6 +37,7 @@ It’s built for servers that want a minimal, modern interface that actually fee
     close = true,
     description = 'Navigate with confidence.'
 }
-
+```
+<p align="center"> <img src="assets/compass.png" alt="In-game inventory item icon" width="100"> </p>
 
 
