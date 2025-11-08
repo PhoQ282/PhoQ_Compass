@@ -23,9 +23,19 @@ It’s built for servers that want a minimal, modern interface that actually fee
 ## Installation
 
 1. Download or clone the repository into your server’s `resources` folder
-2. Place the image found in `assets` into your **ox_inventory/web/images/`** folder. (Check your specific inventory configuration for the exact path if different)
+2. Place the image found in `assets` into your **ox_inventory/web/images/** folder. (Check your specific inventory configuration for the exact path if different)
 3. Go to your server.cfg and ensure the resource, `ensure PhoQ_Compass`
 
+## Camera vs Player Heading
+
+By default, PhoQ_Compass uses the gameplay camera yaw, so the compass updates whenever the player looks around with their mouse.
+If you prefer the compass to follow the player heading instead, you can swap the heading source in 'client/client.lua'
+```lua
+local ped = PlayedPedID()
+local coords = GetEntityCoords(ped)
+local camRot = GetGameplayCamrot(0) or vector3(0.0, 0.0, 0.0)
+local heading = ((camRot.z % 360) + 360) % 360
+```
 
 ## Inventory Item (ox_inventory)
 
@@ -39,5 +49,6 @@ It’s built for servers that want a minimal, modern interface that actually fee
 }
 ```
 <p align="center"> <img src="assets/compass.png" alt="In-game inventory item icon" width="100"> </p>
+
 
 
