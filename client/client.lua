@@ -30,9 +30,17 @@ end)
 CreateThread(function()
     while true do
         if show then
+            -- Uncomment the followning 3 lines if you prefer to use player heading instead of camera heading
+            --local ped = PlayerPedId()
+            --local coords = GetEntityCoords(ped)
+            --local heading = GetEntityHeading(ped)
+                
+            -- Comment out the following 4 lines if you prefer to use player heading instead of camera heading
             local ped = PlayerPedId()
             local coords = GetEntityCoords(ped)
-            local heading = GetEntityHeading(ped)
+            local camRot = GetGameplayCamRot(0) or vector3(0.0, 0.0, 0.0)
+            local heading = ((camRot.z % 360) + 360) % 360
+
             local streetHash, crossHash = GetStreetNameAtCoord(coords.x, coords.y, coords.z)
             local streetName = GetStreetNameFromHashKey(streetHash) or ''
             local crossName = GetStreetNameFromHashKey(crossHash) or ''
